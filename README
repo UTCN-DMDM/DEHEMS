@@ -1,0 +1,45 @@
+Project article: http://www.sciencedirect.com/science/article/pii/S0378778810003750
+
+File DataInit.txt
+Number of samples  (nsample)
+Index of sample (pr.indm)
+Maximum of control signal (pr.umax), Minimum of control signal (pr.umin)
+Number of memorized data (pr.nmem)
+Number of simulation data (pr.n_sim)
+weight (pr.w1)
+weight (pr.w2)
+weight (pr.w3)
+Sample period (pr.T)
+Initial values of model parameters (pr.k_fe, pr.k_oe, pr.k_ie, pr.Cae, pr.Cwe)
+Accepted Maximum/minimum of parameter (pr.k_fe_max, pr.k_fe_min)
+Accepted Maximum/minimum of parameter (pr.k_oe_max, pr.k_oe_min)
+Accepted Maximum/minimum of parameter (pr.k_ie_max, pr.k_ie_min)
+Accepted Maximum/minimum of parameter (pr.Cae_max, pr.Cae_min)
+Accepted Maximum/minimum of parameter (pr.Cwe_max, pr.Cwe_min)
+
+File DataIn.txt
+
+Contains samples of experimental data under form:
+
+Pr.indm (number of sample), Pr.u (control signal - consumption), Pr.Ta (Indoor temperature)
+Pr.Tout (Outdoor temperature) 
+… 999 samples
+
+File DataOut.txt
+
+Contains data of identification process:
+
+Model parameters (pr.k_fe, pr.k_oe, pr.k_ie, pr.Cae,pr.Cwe),  Estimation of consumption ( pr.Q_est), estimation of temperature of external wall (pr.Twe), index of transitory regime (pr.tranz)
+…
+
+About identification process: please read  section IV.2 from file EnergyBuildings.pdf only with a small difference:  the temperature of the wall is not measured.
+
+So the file File DataInit.txt contains some data to initialise the algorithms, File DataInit.txt contains experimental data (999 samples);
+Using the Delphi application these data from these two files are computed and as a result we obtain data from File DataOut.txt
+
+In Delphi application are implemented only identification and control algorithm, without any user interface.
+
+
+ 
+
+
